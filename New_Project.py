@@ -31,4 +31,4 @@ def decode(q,n):
 
     shift = ''.join(char_list)
     return shift
-print(encode(q,n))
+print(decode(q,n))
