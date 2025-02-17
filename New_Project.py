@@ -6,12 +6,10 @@ def encode(q,n):
 
     for i in range(len(char_list)):
         letter = char_list[i]
-        if letter == 'z':
+        if letter.islower():
             char_list[i] = chr(((ord(letter) - ord('a') + n ) % 26) + ord('a'))
-        elif letter == 'Z':
+        elif letter.isupper():
             char_list[i] = chr(((ord(letter) - ord('A') + n ) % 26) + ord('A'))
-        elif letter == '':
-            char_list[i] = chr(ord(''))
         else:
             char_list[i] = chr(ord(letter) + n )
 
@@ -24,9 +22,9 @@ def decode(q,n):
 
     for i in range(len(char_list)):
         letter = char_list[i]
-        if letter == 'a':
+        if letter.islower():
             char_list[i] = chr(ord('z')-((ord('z')-ord(letter) + n ) % 26))
-        elif letter == 'A':
+        elif letter.isupper():
             char_list[i] = chr(ord('Z')-((ord('Z')-ord(letter) + n ) % 26)) 
         else:
             char_list[i] = chr(ord(letter) - n)
