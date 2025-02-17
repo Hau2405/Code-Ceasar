@@ -15,11 +15,10 @@ def encode(q,n):
 
     shift = ''.join(char_list)
     return shift
-
+encode_save = encode(q,n)
 #decode
-def decode(encode(q,n)):
+def decode(q,n):
     char_list = list(q)
-    encode_save = encode(q,n)
 
     for i in range(len(char_list)):
         letter = char_list[i]
@@ -32,5 +31,6 @@ def decode(encode(q,n)):
 
     shift = ''.join(char_list)
     return shift
+
 print(encode(q,n))
 print(decode(encode_save,n))
